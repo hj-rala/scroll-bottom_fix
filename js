@@ -24,16 +24,4 @@
 	$(window).resize(function() {
 		scrollQuick();
 	});
-  
-	//couter
-	if ($('.counter').length > 0){
-		$(document).ready(function() {
-			$('.counter').counterUp({
-				delay: 10,
-				duration: 1000,
-				time: 1000
-			});
-		});
-	}
-	
-	$('.openSbox .box').matchHeight();
+ 
