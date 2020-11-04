@@ -1,14 +1,15 @@
 //scrollQuick
-	var scrollQuick = function() {
-		var winWidth = $(window).width();
-		var $tmp = $(window).scrollTop();
-		var $contHeight = $(document).height() - $(window).height() - $("footer").height() - 60;
-		var $quickBtn = $('.quick');
-		var $quickH = $quickBtn.height();
-		var $target = $quickBtn.outerHeight();
+var scrollQuick = function() {
+	var winWidth = $(window).width();
+	var $tmp = $(window).scrollTop();
+	var $contHeight = $(document).height() - $(window).height() - $("footer").height() - 60;
+	var $quickBtn = $('.quick');
+	var $quickH = $quickBtn.height();
+	var $target = $quickBtn.outerHeight();
 
-		console.log($quickH);
-
+	if (winWidth > 768){
+		$quickBtn.fadeIn(300);
+	} else {
 		if ($tmp < $target){
 			$quickBtn.fadeOut(300);
 		} else if($contHeight <= $tmp){
@@ -18,10 +19,10 @@
 			$quickBtn.css({'bottom': 0});
 		}
 	}
-	$(window).scroll(function() {
-		scrollQuick();
-	});
-	$(window).resize(function() {
-		scrollQuick();
-	});
- 
+}
+$(window).scroll(function() {
+	scrollQuick();
+});
+$(window).resize(function() {
+	scrollQuick();
+});
